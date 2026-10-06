@@ -1,0 +1,45 @@
+/*
+ * PROVISIONAL design tokens. Replace these values when Brandora's real logo,
+ * palette and typefaces are supplied — components reference tokens only.
+ * Contrast (WCAG 2.2): ink 15.8:1, ink-muted 7.3:1, primary 7.4:1, grow 5.1:1 on white.
+ */
+:root {
+  --bl-ink: #17212b;
+  --bl-ink-muted: #4a5866;
+  --bl-surface: #ffffff;
+  --bl-surface-alt: #eef2f5;
+  --bl-surface-deep: #17212b;
+  --bl-on-deep: #f3f6f8;
+  --bl-on-deep-muted: #b7c3cd;
+  --bl-border: #d3dce3;
+  --bl-border-strong: #9fb0bd;
+
+  --bl-primary: #1d5b79;
+  --bl-primary-hover: #154760;
+  --bl-on-primary: #ffffff;
+  --bl-primary-soft: #e3eef4;
+
+  /* Reserved for the "Grow" step and success states only. */
+  --bl-grow: #2f7d5b;
+  --bl-grow-soft: #e4f2ea;
+
+  --bl-danger: #b42318;
+  --bl-danger-soft: #fdecea;
+
+  --bl-focus: #1d5b79;
+
+  --bl-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  --bl-radius-control: 6px;
+  --bl-radius-panel: 10px;
+  --bl-shadow-raised: 0 1px 2px rgb(23 33 43 / 0.06), 0 4px 12px rgb(23 33 43 / 0.06);
+
+  --bl-container: 72rem;
+  --bl-gutter: 1rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --bl-gutter: 2rem;
+  }
+}

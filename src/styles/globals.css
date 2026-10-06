@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --color-ink: var(--bl-ink);
+  --color-ink-muted: var(--bl-ink-muted);
+  --color-surface: var(--bl-surface);
+  --color-surface-alt: var(--bl-surface-alt);
+  --color-surface-deep: var(--bl-surface-deep);
+  --color-on-deep: var(--bl-on-deep);
+  --color-on-deep-muted: var(--bl-on-deep-muted);
+  --color-line: var(--bl-border);
+  --color-line-strong: var(--bl-border-strong);
+  --color-primary: var(--bl-primary);
+  --color-primary-hover: var(--bl-primary-hover);
+  --color-on-primary: var(--bl-on-primary);
+  --color-primary-soft: var(--bl-primary-soft);
+  --color-grow: var(--bl-grow);
+  --color-grow-soft: var(--bl-grow-soft);
+  --color-danger: var(--bl-danger);
+  --color-danger-soft: var(--bl-danger-soft);
+  --font-sans: var(--bl-font-sans);
+  --radius-control: var(--bl-radius-control);
+  --radius-panel: var(--bl-radius-panel);
+  --shadow-raised: var(--bl-shadow-raised);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--bl-surface);
+    color: var(--bl-ink);
+    font-family: var(--bl-font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--bl-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .on-deep {
+    --bl-focus: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: var(--bl-container);
+    margin-inline: auto;
+    padding-inline: var(--bl-gutter);
+  }
+
+  .prose-width {
+    max-width: 68ch;
+  }
+
+  .heading-1 {
+    font-size: clamp(2.125rem, 1.4rem + 3.2vw, 3.5rem);
+    font-weight: 700;
+  }
+
+  .heading-2 {
+    font-size: clamp(1.625rem, 1.25rem + 1.6vw, 2.25rem);
+    font-weight: 700;
+  }
+
+  .heading-3 {
+    font-size: 1.1875rem;
+    font-weight: 650;
+    letter-spacing: -0.005em;
+  }
+
+  .lede {
+    font-size: 1.1875rem;
+    color: var(--bl-ink-muted);
+  }
+
+  .text-link {
+    color: var(--bl-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .text-link:hover {
+    color: var(--bl-primary-hover);
+    text-decoration-thickness: 2px;
+  }
+}
